@@ -1,27 +1,26 @@
 {
-	"id": "nodebb-plugin-quickstart",
-	"url": "https://github.com/NodeBB/nodebb-plugin-quickstart",
-	"library": "./library.js",
-	"hooks": [
-		{ "hook": "static:app.load", "method": "init" },
-		{ "hook": "static:api.routes", "method": "addRoutes" },
-		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" }
-	],
-	"staticDirs": {
-		"static": "./static"
-	},
-	"scss": [
-		"scss/quickstart.scss"
-	],
-	"scripts": [
-		"public/lib/main.js"
-	],
-	"acpScripts": [
-		"public/lib/acp-main.js"
-	],
-	"modules": {
-		"../client/quickstart.js": "./public/lib/quickstart.js",
-		"../admin/plugins/quickstart.js": "./public/lib/admin.js"
-	},
-	"templates": "templates"
+  "id": "nodebb-plugin-tampa-bay-composer",
+  "name": "Tampa Bay Coastal Master Plan Nodebb Custom Composer",
+  "description": "A custom composer plugin designed for the Tampa Bay Coastal Master Plan Nodebb Forum.",
+  "url": "https://github.com/sarah-tbrpc/nodebb-custom-composer-plugin",
+  "author": "Sarah Vitale",
+  "version": "1.0.0",
+  "minver": "2.0.0",
+  "hooks": [
+    {
+      "hook": "filter:composer.render",
+      "method": "renderComposer"
+    },
+    {
+      "hook": "filter:composer.check",
+      "method": "validateComposer"
+    }
+  ],
+  "staticDirs": {
+    "static": "./static"
+  },
+  "scripts": [
+    "static/lib/main.js"
+  ],
+  "templates": "./templates"
 }
